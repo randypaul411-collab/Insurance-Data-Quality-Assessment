@@ -1,0 +1,408 @@
+{
+  "expectations": [
+    {
+      "id": "32364d41-873e-40bc-89eb-4ca60bfe16ec",
+      "kwargs": {
+        "column": "Policy_Number"
+      },
+      "meta": {
+        "dimension": "Completeness"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "9652f719-ba31-42b7-93a6-dd6df07e47b7",
+      "kwargs": {
+        "column": "Customer_ID"
+      },
+      "meta": {
+        "dimension": "Completeness"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "afc8e4e8-9b3b-4311-9458-fd2ac44e8166",
+      "kwargs": {
+        "column": "Covered_Life_ID"
+      },
+      "meta": {
+        "dimension": "Completeness"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "52933e59-2b4e-4f3a-8e0d-de8e96f9024d",
+      "kwargs": {
+        "column": "Product_ID"
+      },
+      "meta": {
+        "dimension": "Completeness"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "1f93b3a7-19f9-42c8-96b3-ea0577a0ce66",
+      "kwargs": {
+        "column": "Product_Name"
+      },
+      "meta": {
+        "dimension": "Completeness"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "afab122e-4b55-4bce-8409-b2b61b89cfa0",
+      "kwargs": {
+        "column": "Role"
+      },
+      "meta": {
+        "dimension": "Completeness"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "3007c4d8-4618-4d61-ac3c-3069e5b6b318",
+      "kwargs": {
+        "column": "DOB"
+      },
+      "meta": {
+        "dimension": "Completeness"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "7c153566-cc19-4f9f-955d-739ea479bd57",
+      "kwargs": {
+        "column": "Gender"
+      },
+      "meta": {
+        "dimension": "Completeness"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "a0a1d109-3a66-4b55-8036-aef2c5b25dcf",
+      "kwargs": {
+        "column": "Issue_Date"
+      },
+      "meta": {
+        "dimension": "Completeness"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "f8b6657f-3aca-4b50-983c-5e7bef2c2c5d",
+      "kwargs": {
+        "column": "Date_of_Purchase"
+      },
+      "meta": {
+        "dimension": "Completeness"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "739eac6f-7da9-4a7d-a03e-470700090be8",
+      "kwargs": {
+        "column": "Premium_Amount"
+      },
+      "meta": {
+        "dimension": "Completeness"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "84344ab1-ecbd-489e-be81-e189d2d889b0",
+      "kwargs": {
+        "column": "Annual_Premium"
+      },
+      "meta": {
+        "dimension": "Completeness"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "220ccf4f-e4b6-420f-bd9a-df5f75b00fe7",
+      "kwargs": {
+        "column": "Policy_Status"
+      },
+      "meta": {
+        "dimension": "Completeness"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "78a93928-c3b6-455d-b28f-4287857e1daf",
+      "kwargs": {
+        "column": "Contract_Status"
+      },
+      "meta": {
+        "dimension": "Completeness"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "215f9d97-d92f-462c-bb07-778b223bdd0b",
+      "kwargs": {
+        "column": "Payment_Frequency"
+      },
+      "meta": {
+        "dimension": "Completeness"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "4db78d6e-e890-4709-9f96-1cf0ce203ab5",
+      "kwargs": {
+        "column": "Term"
+      },
+      "meta": {
+        "dimension": "Completeness"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "5b97cc24-97d0-4638-a3cf-d437bbf754ba",
+      "kwargs": {
+        "column": "Maturity_Date"
+      },
+      "meta": {
+        "dimension": "Completeness"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "c60d63b0-ee5e-43d8-9174-2127eccab936",
+      "kwargs": {
+        "column": "Sum_Assured"
+      },
+      "meta": {
+        "dimension": "Completeness"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "e47e9ba2-f3bd-4e0e-9177-7765074675c4",
+      "kwargs": {
+        "column": "Gender",
+        "value_set": [
+          "M",
+          "F",
+          "Male",
+          "Female"
+        ]
+      },
+      "meta": {
+        "dimension": "Validity"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "id": "9b9163c1-4d3f-4ba0-a36d-802525dab343",
+      "kwargs": {
+        "column": "Policy_Status",
+        "value_set": [
+          "ACTIVE",
+          "LAPSE",
+          "NEVER LAPSE",
+          "SURRENDERED",
+          "MATURED"
+        ]
+      },
+      "meta": {
+        "dimension": "Validity",
+        "note": "ACTIVEE and LAPSED are known data entry errors"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "id": "bef31366-4ab7-4bc4-ac4f-1cc2b2b6d9bd",
+      "kwargs": {
+        "column": "Payment_Frequency",
+        "value_set": [
+          "Monthly",
+          "Quarterly",
+          "Semi-Annual",
+          "Annual",
+          "Single"
+        ]
+      },
+      "meta": {
+        "dimension": "Validity"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "id": "1d3b98b1-0be7-46e4-8b91-c2535cd2babb",
+      "kwargs": {
+        "column": "Loan_Eligible",
+        "value_set": [
+          "Y",
+          "N",
+          "Yes",
+          "No"
+        ]
+      },
+      "meta": {
+        "dimension": "Validity"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "id": "fd4ecbac-02ca-488a-a544-ecf74e674e13",
+      "kwargs": {
+        "column": "Role",
+        "value_set": [
+          "Primary",
+          "Spouse",
+          "Child",
+          "Dependent",
+          "Nominee",
+          "Proposer"
+        ]
+      },
+      "meta": {
+        "dimension": "Validity"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "id": "112f66bb-4f93-44a1-a808-1234dfd01b1f",
+      "kwargs": {
+        "column": "Premium_Amount",
+        "min_value": 0.01
+      },
+      "meta": {
+        "dimension": "Validity"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "085fc834-7e0a-4a8f-a345-35b8942a328b",
+      "kwargs": {
+        "column": "Annual_Premium",
+        "min_value": 0.01
+      },
+      "meta": {
+        "dimension": "Validity"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "da695e22-5d90-494f-861d-a02a3a738d95",
+      "kwargs": {
+        "column": "Monthly_Premium",
+        "min_value": 0.01
+      },
+      "meta": {
+        "dimension": "Validity"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "b4a00bac-2703-4628-a8af-c85c13bdcba8",
+      "kwargs": {
+        "column": "Sum_Assured",
+        "min_value": 1.0
+      },
+      "meta": {
+        "dimension": "Validity"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "964bc028-4225-4198-9552-80660dd9d27a",
+      "kwargs": {
+        "column": "Term",
+        "max_value": 480.0,
+        "min_value": 12.0
+      },
+      "meta": {
+        "dimension": "Validity",
+        "note": "Term is in months"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "4539a7c2-7c09-4d75-baf9-0245c5a18224",
+      "kwargs": {
+        "column": "Tenure_Years",
+        "min_value": 0.0
+      },
+      "meta": {
+        "dimension": "Validity"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "81f82da1-9ac2-40c6-acac-ea676bfdcd66",
+      "kwargs": {
+        "column": "No_of_Outstanding_Premium",
+        "min_value": 0.0
+      },
+      "meta": {
+        "dimension": "Validity"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "4c47c815-8b51-429a-a3a6-2642a5031ee0",
+      "kwargs": {
+        "column": "Covered_Life_ID"
+      },
+      "meta": {
+        "dimension": "Validity"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_unique"
+    },
+    {
+      "id": "7231b1de-3405-416f-bcfc-04a8d904b8f9",
+      "kwargs": {
+        "column": "DOB",
+        "max_value": "2026-06-08",
+        "min_value": "1900-01-01"
+      },
+      "meta": {
+        "dimension": "Validity"
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    }
+  ],
+  "id": "dc71cb17-0f7f-493c-8dbb-f6a1426a63a8",
+  "meta": {
+    "great_expectations_version": "1.18.0"
+  },
+  "name": "insurance_covered_lives_dq_suite",
+  "notes": null
+}

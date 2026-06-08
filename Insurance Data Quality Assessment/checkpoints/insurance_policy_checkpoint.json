@@ -1,0 +1,12 @@
+{
+  "actions": [],
+  "id": "6083403b-9c69-4153-ba4b-2288c778913d",
+  "name": "insurance_policy_checkpoint",
+  "result_format": "SUMMARY",
+  "validation_definitions": [
+    {
+      "id": "f055a12d-e5ad-4c64-8ee3-7dd2df520e3a",
+      "name": "insurance_validation"
+    }
+  ]
+}

@@ -1,0 +1,1413 @@
+{
+  "id": null,
+  "meta": {
+    "active_batch_definition": {
+      "batch_identifiers": {
+        "dataframe": "<DATAFRAME>"
+      },
+      "data_asset_name": "covered_lives_asset",
+      "data_connector_name": "fluent",
+      "datasource_name": "insurance_policy_data"
+    },
+    "batch_markers": {
+      "ge_load_time": "20260608T044830.090919Z",
+      "pandas_data_fingerprint": "746eca8f463f4051a733956f3a2b5aeb"
+    },
+    "batch_parameters": {
+      "dataframe": "<DATAFRAME>"
+    },
+    "batch_spec": {
+      "batch_data": "PandasDataFrame"
+    },
+    "checkpoint_id": "7efecf21-802a-49dc-879d-b7fe85a7149b",
+    "great_expectations_version": "1.18.0",
+    "run_id": {
+      "run_name": null,
+      "run_time": "2026-06-08T00:48:30.054943-04:00"
+    },
+    "validation_id": "8f2ea74a-09c4-4057-9459-cfcb0ff6954b",
+    "validation_time": "2026-06-08T04:48:30.054943+00:00"
+  },
+  "results": [
+    {
+      "exception_info": {
+        "MetricConfigurationID(metric_name='column_values.between.condition', metric_domain_kwargs_id='9e9e8ae13180830fec5cfe83a988e360', metric_value_kwargs_id='8250638e50aac952f74da28f53e848ff')": {
+          "exception_message": "Invalid comparison between dtype=datetime64[ns] and date",
+          "exception_traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\User\\anaconda3\\Lib\\site-packages\\pandas\\core\\arrays\\datetimelike.py\", line 1006, in _cmp_method\n    other = self._validate_comparison_value(other)\n  File \"C:\\Users\\User\\anaconda3\\Lib\\site-packages\\pandas\\core\\arrays\\datetimelike.py\", line 565, in _validate_comparison_value\n    raise InvalidComparison(other)\npandas.errors.InvalidComparison: 1900-01-01\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\User\\anaconda3\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 577, in _process_direct_and_bundled_metric_computation_configurations\n    metric_computation_configuration.metric_fn(  # type: ignore[misc] # F not callable\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        **metric_computation_configuration.metric_provider_kwargs\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\User\\anaconda3\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\metric_provider.py\", line 99, in inner_func\n    return metric_fn(*args, **kwargs)\n  File \"C:\\Users\\User\\anaconda3\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\map_metric_provider\\column_condition_partial.py\", line 117, in inner_func\n    meets_expectation_series = metric_fn(\n        cls,\n    ...<2 lines>...\n        _metrics=metrics,\n    )\n  File \"C:\\Users\\User\\anaconda3\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\column_map_metrics\\column_values_between.py\", line 67, in _pandas\n    return cls._pandas_vectorized(temp_column, min_value, max_value, strict_min, strict_max)\n           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\User\\anaconda3\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\column_map_metrics\\column_values_between.py\", line 160, in _pandas_vectorized\n    return (min_value <= column) & (column <= max_value)\n            ^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\User\\anaconda3\\Lib\\site-packages\\pandas\\core\\ops\\common.py\", line 76, in new_method\n    return method(self, other)\n  File \"C:\\Users\\User\\anaconda3\\Lib\\site-packages\\pandas\\core\\arraylike.py\", line 60, in __ge__\n    return self._cmp_method(other, operator.ge)\n           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\User\\anaconda3\\Lib\\site-packages\\pandas\\core\\series.py\", line 6138, in _cmp_method\n    res_values = ops.comparison_op(lvalues, rvalues, op)\n  File \"C:\\Users\\User\\anaconda3\\Lib\\site-packages\\pandas\\core\\ops\\array_ops.py\", line 330, in comparison_op\n    res_values = op(lvalues, rvalues)\n  File \"C:\\Users\\User\\anaconda3\\Lib\\site-packages\\pandas\\core\\ops\\common.py\", line 76, in new_method\n    return method(self, other)\n  File \"C:\\Users\\User\\anaconda3\\Lib\\site-packages\\pandas\\core\\arraylike.py\", line 60, in __ge__\n    return self._cmp_method(other, operator.ge)\n           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\User\\anaconda3\\Lib\\site-packages\\pandas\\core\\arrays\\datetimelike.py\", line 1008, in _cmp_method\n    return invalid_comparison(self, other, op)\n  File \"C:\\Users\\User\\anaconda3\\Lib\\site-packages\\pandas\\core\\ops\\invalid.py\", line 40, in invalid_comparison\n    raise TypeError(f\"Invalid comparison between dtype={left.dtype} and {typ}\")\nTypeError: Invalid comparison between dtype=datetime64[ns] and date\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\User\\anaconda3\\Lib\\site-packages\\great_expectations\\validator\\validation_graph.py\", line 290, in _resolve\n    self._execution_engine.resolve_metrics(\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n        metrics_to_resolve=computable_metrics,\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        metrics=metrics,\n        ^^^^^^^^^^^^^^^^\n        runtime_configuration=runtime_configuration,\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\User\\anaconda3\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 294, in resolve_metrics\n    return self._process_direct_and_bundled_metric_computation_configurations(\n           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n        metric_fn_direct_configurations=metric_fn_direct_configurations,\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        metric_fn_bundle_configurations=metric_fn_bundle_configurations,\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\User\\anaconda3\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 582, in _process_direct_and_bundled_metric_computation_configurations\n    raise gx_exceptions.MetricResolutionError(\n    ...<2 lines>...\n    ) from e\ngreat_expectations.exceptions.exceptions.MetricResolutionError: Invalid comparison between dtype=datetime64[ns] and date\n",
+          "raised_exception": true
+        }
+      },
+      "expectation_config": {
+        "id": "96929e82-e43f-452d-a013-47721ea01403",
+        "kwargs": {
+          "batch_id": "insurance_policy_data-covered_lives_asset",
+          "column": "DOB",
+          "max_value": "2026-06-08",
+          "min_value": "1900-01-01"
+        },
+        "meta": {
+          "dimension": "Validity"
+        },
+        "severity": "critical",
+        "type": "expect_column_values_to_be_between"
+      },
+      "meta": {},
+      "result": {},
+      "success": false
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "00b3c3e4-0ac4-42aa-8926-3a5c57afccbd",
+        "kwargs": {
+          "batch_id": "insurance_policy_data-covered_lives_asset",
+          "column": "Policy_Number"
+        },
+        "meta": {
+          "dimension": "Completeness"
+        },
+        "severity": "critical",
+        "type": "expect_column_values_to_not_be_null"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 8359,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "4a81e3c8-b240-4611-be53-93ece85d7a98",
+        "kwargs": {
+          "batch_id": "insurance_policy_data-covered_lives_asset",
+          "column": "Customer_ID"
+        },
+        "meta": {
+          "dimension": "Completeness"
+        },
+        "severity": "critical",
+        "type": "expect_column_values_to_not_be_null"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 8359,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "89a97c08-1d5a-49b2-bce0-050c9a6a52dd",
+        "kwargs": {
+          "batch_id": "insurance_policy_data-covered_lives_asset",
+          "column": "Covered_Life_ID"
+        },
+        "meta": {
+          "dimension": "Completeness"
+        },
+        "severity": "critical",
+        "type": "expect_column_values_to_not_be_null"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 8359,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "8d7be6eb-991f-4536-b14d-362fd1eb3f65",
+        "kwargs": {
+          "batch_id": "insurance_policy_data-covered_lives_asset",
+          "column": "Covered_Life_ID"
+        },
+        "meta": {
+          "dimension": "Validity"
+        },
+        "severity": "critical",
+        "type": "expect_column_values_to_be_unique"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 8359,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [
+          {
+            "count": 2,
+            "value": "TIP484707065-CL02"
+          },
+          {
+            "count": 1,
+            "value": "DFP288615830-CL04"
+          },
+          {
+            "count": 1,
+            "value": "DFP288615830-CL05"
+          },
+          {
+            "count": 1,
+            "value": "DFP434976269-CL04"
+          },
+          {
+            "count": 1,
+            "value": "PLP622673346-CL03"
+          },
+          {
+            "count": 1,
+            "value": "PLP633871046-CL03"
+          },
+          {
+            "count": 1,
+            "value": "PLP633871046-CL05"
+          },
+          {
+            "count": 1,
+            "value": "PWP543832212-CL02"
+          },
+          {
+            "count": 1,
+            "value": "PWP543832212-CL03"
+          },
+          {
+            "count": 1,
+            "value": "TIP671584357-CL03"
+          },
+          {
+            "count": 1,
+            "value": "TIP973506788-CL03"
+          },
+          {
+            "count": 1,
+            "value": "TIP974951669-CL03"
+          },
+          {
+            "count": 1,
+            "value": "UES646734407-CL04"
+          },
+          {
+            "count": 1,
+            "value": "UES982852295-CL01"
+          },
+          {
+            "count": 1,
+            "value": "UES982852295-CL02"
+          },
+          {
+            "count": 1,
+            "value": "UPF169569205-CL01"
+          },
+          {
+            "count": 1,
+            "value": "UPF921289858-CL02"
+          },
+          {
+            "count": 1,
+            "value": "UPF921289858-CL03"
+          },
+          {
+            "count": 1,
+            "value": "UPF927478999-CL03"
+          }
+        ],
+        "partial_unexpected_index_list": [
+          91,
+          98,
+          192,
+          216,
+          332,
+          442,
+          445,
+          468,
+          555,
+          563,
+          568,
+          610,
+          643,
+          757,
+          801,
+          805,
+          840,
+          853,
+          858,
+          859
+        ],
+        "partial_unexpected_list": [
+          "TIP974951669-CL03",
+          "PWP543832212-CL02",
+          "UPF921289858-CL03",
+          "UPF169569205-CL01",
+          "UPF927478999-CL03",
+          "PWP543832212-CL03",
+          "PLP633871046-CL05",
+          "DFP288615830-CL05",
+          "DFP288615830-CL04",
+          "TIP671584357-CL03",
+          "PLP633871046-CL03",
+          "UES646734407-CL04",
+          "UES982852295-CL02",
+          "UES982852295-CL01",
+          "UPF921289858-CL02",
+          "PLP622673346-CL03",
+          "TIP484707065-CL02",
+          "DFP434976269-CL04",
+          "TIP484707065-CL02",
+          "TIP973506788-CL03"
+        ],
+        "unexpected_count": 166,
+        "unexpected_percent": 1.9858834788850341,
+        "unexpected_percent_nonmissing": 1.9858834788850341,
+        "unexpected_percent_total": 1.9858834788850341
+      },
+      "success": false
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "2437ecc9-59db-4ef0-aa3e-386fba3ae7d1",
+        "kwargs": {
+          "batch_id": "insurance_policy_data-covered_lives_asset",
+          "column": "Product_ID"
+        },
+        "meta": {
+          "dimension": "Completeness"
+        },
+        "severity": "critical",
+        "type": "expect_column_values_to_not_be_null"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 8359,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "e9bd117f-2e08-43a2-9773-cf22a57c3fed",
+        "kwargs": {
+          "batch_id": "insurance_policy_data-covered_lives_asset",
+          "column": "Product_Name"
+        },
+        "meta": {
+          "dimension": "Completeness"
+        },
+        "severity": "critical",
+        "type": "expect_column_values_to_not_be_null"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 8359,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "f3fd1f71-7550-44e6-b697-23c4da194fa8",
+        "kwargs": {
+          "batch_id": "insurance_policy_data-covered_lives_asset",
+          "column": "Role"
+        },
+        "meta": {
+          "dimension": "Completeness"
+        },
+        "severity": "critical",
+        "type": "expect_column_values_to_not_be_null"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 8359,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "d64c71c5-e244-414a-b773-575556aefb39",
+        "kwargs": {
+          "batch_id": "insurance_policy_data-covered_lives_asset",
+          "column": "Role",
+          "value_set": [
+            "Primary",
+            "Spouse",
+            "Child",
+            "Dependent",
+            "Nominee",
+            "Proposer"
+          ]
+        },
+        "meta": {
+          "dimension": "Validity"
+        },
+        "severity": "critical",
+        "type": "expect_column_values_to_be_in_set"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 8359,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [
+          {
+            "count": 11,
+            "value": "Life Assured"
+          },
+          {
+            "count": 9,
+            "value": "Beneficiary"
+          }
+        ],
+        "partial_unexpected_index_list": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "partial_unexpected_list": [
+          "Life Assured",
+          "Beneficiary",
+          "Life Assured",
+          "Life Assured",
+          "Life Assured",
+          "Beneficiary",
+          "Life Assured",
+          "Life Assured",
+          "Life Assured",
+          "Life Assured",
+          "Life Assured",
+          "Life Assured",
+          "Beneficiary",
+          "Beneficiary",
+          "Beneficiary",
+          "Life Assured",
+          "Beneficiary",
+          "Beneficiary",
+          "Beneficiary",
+          "Beneficiary"
+        ],
+        "unexpected_count": 8359,
+        "unexpected_percent": 100.0,
+        "unexpected_percent_nonmissing": 100.0,
+        "unexpected_percent_total": 100.0
+      },
+      "success": false
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "713424c6-7098-4e8c-91e3-cb21ba1ca498",
+        "kwargs": {
+          "batch_id": "insurance_policy_data-covered_lives_asset",
+          "column": "DOB"
+        },
+        "meta": {
+          "dimension": "Completeness"
+        },
+        "severity": "critical",
+        "type": "expect_column_values_to_not_be_null"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 8359,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "9343fd3f-ab5d-494b-b545-b9fef14ae336",
+        "kwargs": {
+          "batch_id": "insurance_policy_data-covered_lives_asset",
+          "column": "Gender"
+        },
+        "meta": {
+          "dimension": "Completeness"
+        },
+        "severity": "critical",
+        "type": "expect_column_values_to_not_be_null"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 8359,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "44f01975-12a9-4281-8ad8-71b1ae1635d8",
+        "kwargs": {
+          "batch_id": "insurance_policy_data-covered_lives_asset",
+          "column": "Gender",
+          "value_set": [
+            "M",
+            "F",
+            "Male",
+            "Female"
+          ]
+        },
+        "meta": {
+          "dimension": "Validity"
+        },
+        "severity": "critical",
+        "type": "expect_column_values_to_be_in_set"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 8359,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "92a9ac4b-6089-469c-9aa4-3333fa6085c6",
+        "kwargs": {
+          "batch_id": "insurance_policy_data-covered_lives_asset",
+          "column": "Issue_Date"
+        },
+        "meta": {
+          "dimension": "Completeness"
+        },
+        "severity": "critical",
+        "type": "expect_column_values_to_not_be_null"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 8359,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "101342f8-5b77-4b99-a66d-5f6a5328c259",
+        "kwargs": {
+          "batch_id": "insurance_policy_data-covered_lives_asset",
+          "column": "Date_of_Purchase"
+        },
+        "meta": {
+          "dimension": "Completeness"
+        },
+        "severity": "critical",
+        "type": "expect_column_values_to_not_be_null"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 8359,
+        "partial_unexpected_counts": [
+          {
+            "count": 20,
+            "value": "NaT"
+          }
+        ],
+        "partial_unexpected_index_list": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15,
+          18,
+          20,
+          21,
+          22,
+          23,
+          24,
+          26
+        ],
+        "partial_unexpected_list": [
+          "NaT",
+          "NaT",
+          "NaT",
+          "NaT",
+          "NaT",
+          "NaT",
+          "NaT",
+          "NaT",
+          "NaT",
+          "NaT",
+          "NaT",
+          "NaT",
+          "NaT",
+          "NaT",
+          "NaT",
+          "NaT",
+          "NaT",
+          "NaT",
+          "NaT",
+          "NaT"
+        ],
+        "unexpected_count": 6234,
+        "unexpected_percent": 74.5782988395741
+      },
+      "success": false
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "e4f27b41-cb85-4190-a7c7-17f021b781a0",
+        "kwargs": {
+          "batch_id": "insurance_policy_data-covered_lives_asset",
+          "column": "Premium_Amount"
+        },
+        "meta": {
+          "dimension": "Completeness"
+        },
+        "severity": "critical",
+        "type": "expect_column_values_to_not_be_null"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 8359,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "bfacf090-fed1-4658-a169-80d782ddfa89",
+        "kwargs": {
+          "batch_id": "insurance_policy_data-covered_lives_asset",
+          "column": "Premium_Amount",
+          "min_value": 0.01
+        },
+        "meta": {
+          "dimension": "Validity"
+        },
+        "severity": "critical",
+        "type": "expect_column_values_to_be_between"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 8359,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [
+          {
+            "count": 10,
+            "value": -50.0
+          },
+          {
+            "count": 10,
+            "value": 0.0
+          }
+        ],
+        "partial_unexpected_index_list": [
+          28,
+          95,
+          119,
+          272,
+          346,
+          413,
+          551,
+          588,
+          714,
+          782,
+          874,
+          875,
+          885,
+          900,
+          1260,
+          1271,
+          1325,
+          1340,
+          1421,
+          1422
+        ],
+        "partial_unexpected_list": [
+          -50.0,
+          -50.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -50.0,
+          0.0,
+          -50.0,
+          -50.0,
+          -50.0,
+          0.0,
+          0.0,
+          -50.0,
+          0.0,
+          -50.0,
+          -50.0,
+          -50.0
+        ],
+        "unexpected_count": 83,
+        "unexpected_percent": 0.9929417394425171,
+        "unexpected_percent_nonmissing": 0.9929417394425171,
+        "unexpected_percent_total": 0.9929417394425171
+      },
+      "success": false
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "a65d17fb-ab78-48ea-85f5-56dcd2b61606",
+        "kwargs": {
+          "batch_id": "insurance_policy_data-covered_lives_asset",
+          "column": "Annual_Premium"
+        },
+        "meta": {
+          "dimension": "Completeness"
+        },
+        "severity": "critical",
+        "type": "expect_column_values_to_not_be_null"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 8359,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "b0057037-a895-4b80-ae47-ae61da31333e",
+        "kwargs": {
+          "batch_id": "insurance_policy_data-covered_lives_asset",
+          "column": "Annual_Premium",
+          "min_value": 0.01
+        },
+        "meta": {
+          "dimension": "Validity"
+        },
+        "severity": "critical",
+        "type": "expect_column_values_to_be_between"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 8359,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "961e87de-44ae-4fdc-9c1a-ef119837ce64",
+        "kwargs": {
+          "batch_id": "insurance_policy_data-covered_lives_asset",
+          "column": "Policy_Status"
+        },
+        "meta": {
+          "dimension": "Completeness"
+        },
+        "severity": "critical",
+        "type": "expect_column_values_to_not_be_null"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 8359,
+        "partial_unexpected_counts": [
+          {
+            "count": 12,
+            "value": null
+          }
+        ],
+        "partial_unexpected_index_list": [
+          194,
+          1464,
+          3127,
+          3286,
+          3622,
+          3858,
+          4398,
+          4641,
+          6668,
+          7134,
+          7280,
+          8347
+        ],
+        "partial_unexpected_list": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "unexpected_count": 12,
+        "unexpected_percent": 0.1435578418471109
+      },
+      "success": false
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "14fc8159-1aab-4517-8342-adafd093f86c",
+        "kwargs": {
+          "batch_id": "insurance_policy_data-covered_lives_asset",
+          "column": "Policy_Status",
+          "value_set": [
+            "ACTIVE",
+            "LAPSE",
+            "NEVER LAPSE",
+            "SURRENDERED",
+            "MATURED"
+          ]
+        },
+        "meta": {
+          "dimension": "Validity",
+          "note": "ACTIVEE and LAPSED are known data entry errors"
+        },
+        "severity": "critical",
+        "type": "expect_column_values_to_be_in_set"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 8359,
+        "missing_count": 12,
+        "missing_percent": 0.1435578418471109,
+        "partial_unexpected_counts": [
+          {
+            "count": 12,
+            "value": "ACTIVEE"
+          },
+          {
+            "count": 8,
+            "value": "LAPSED"
+          }
+        ],
+        "partial_unexpected_index_list": [
+          220,
+          775,
+          1237,
+          1263,
+          1471,
+          1500,
+          1746,
+          2121,
+          2274,
+          2382,
+          2462,
+          3518,
+          4084,
+          4401,
+          4514,
+          4554,
+          5003,
+          5038,
+          5137,
+          5149
+        ],
+        "partial_unexpected_list": [
+          "ACTIVEE",
+          "LAPSED",
+          "LAPSED",
+          "ACTIVEE",
+          "ACTIVEE",
+          "ACTIVEE",
+          "LAPSED",
+          "ACTIVEE",
+          "ACTIVEE",
+          "ACTIVEE",
+          "LAPSED",
+          "LAPSED",
+          "ACTIVEE",
+          "ACTIVEE",
+          "LAPSED",
+          "LAPSED",
+          "ACTIVEE",
+          "LAPSED",
+          "ACTIVEE",
+          "ACTIVEE"
+        ],
+        "unexpected_count": 32,
+        "unexpected_percent": 0.3833712711153708,
+        "unexpected_percent_nonmissing": 0.3833712711153708,
+        "unexpected_percent_total": 0.38282091159229575
+      },
+      "success": false
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "7741d4be-6f9d-429b-a0dc-b0dcfea64743",
+        "kwargs": {
+          "batch_id": "insurance_policy_data-covered_lives_asset",
+          "column": "Contract_Status"
+        },
+        "meta": {
+          "dimension": "Completeness"
+        },
+        "severity": "critical",
+        "type": "expect_column_values_to_not_be_null"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 8359,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "fa0c8b06-4118-4b71-be9d-e44487599bbf",
+        "kwargs": {
+          "batch_id": "insurance_policy_data-covered_lives_asset",
+          "column": "Payment_Frequency"
+        },
+        "meta": {
+          "dimension": "Completeness"
+        },
+        "severity": "critical",
+        "type": "expect_column_values_to_not_be_null"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 8359,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "9411be79-5418-4d8f-a883-34c2b8f6b68a",
+        "kwargs": {
+          "batch_id": "insurance_policy_data-covered_lives_asset",
+          "column": "Payment_Frequency",
+          "value_set": [
+            "Monthly",
+            "Quarterly",
+            "Semi-Annual",
+            "Annual",
+            "Single"
+          ]
+        },
+        "meta": {
+          "dimension": "Validity"
+        },
+        "severity": "critical",
+        "type": "expect_column_values_to_be_in_set"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 8359,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "fe0f50c7-987b-45b2-8179-feb1f7f97e62",
+        "kwargs": {
+          "batch_id": "insurance_policy_data-covered_lives_asset",
+          "column": "Term"
+        },
+        "meta": {
+          "dimension": "Completeness"
+        },
+        "severity": "critical",
+        "type": "expect_column_values_to_not_be_null"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 8359,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "0085decd-f7f2-4c4b-bc50-ad2d888d65c4",
+        "kwargs": {
+          "batch_id": "insurance_policy_data-covered_lives_asset",
+          "column": "Term",
+          "max_value": 480.0,
+          "min_value": 12.0
+        },
+        "meta": {
+          "dimension": "Validity",
+          "note": "Term is in months"
+        },
+        "severity": "critical",
+        "type": "expect_column_values_to_be_between"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 8359,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "a74581ec-4593-4eb8-99e3-748ddbe8be06",
+        "kwargs": {
+          "batch_id": "insurance_policy_data-covered_lives_asset",
+          "column": "Maturity_Date"
+        },
+        "meta": {
+          "dimension": "Completeness"
+        },
+        "severity": "critical",
+        "type": "expect_column_values_to_not_be_null"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 8359,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "fe7412fe-5708-451a-9745-c1beb06b8a22",
+        "kwargs": {
+          "batch_id": "insurance_policy_data-covered_lives_asset",
+          "column": "Sum_Assured"
+        },
+        "meta": {
+          "dimension": "Completeness"
+        },
+        "severity": "critical",
+        "type": "expect_column_values_to_not_be_null"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 8359,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "577894a5-51a8-4e0b-8400-7ac2031c1f45",
+        "kwargs": {
+          "batch_id": "insurance_policy_data-covered_lives_asset",
+          "column": "Sum_Assured",
+          "min_value": 1.0
+        },
+        "meta": {
+          "dimension": "Validity"
+        },
+        "severity": "critical",
+        "type": "expect_column_values_to_be_between"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 8359,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "f23e8b65-570a-4aa2-a10e-66cceb87610d",
+        "kwargs": {
+          "batch_id": "insurance_policy_data-covered_lives_asset",
+          "column": "Loan_Eligible",
+          "value_set": [
+            "Y",
+            "N",
+            "Yes",
+            "No"
+          ]
+        },
+        "meta": {
+          "dimension": "Validity"
+        },
+        "severity": "critical",
+        "type": "expect_column_values_to_be_in_set"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 8359,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "a28d0f90-c935-4fe1-a332-3da09101d125",
+        "kwargs": {
+          "batch_id": "insurance_policy_data-covered_lives_asset",
+          "column": "Monthly_Premium",
+          "min_value": 0.01
+        },
+        "meta": {
+          "dimension": "Validity"
+        },
+        "severity": "critical",
+        "type": "expect_column_values_to_be_between"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 8359,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "2806e4c5-5606-4a0d-8d80-0382fb0cc871",
+        "kwargs": {
+          "batch_id": "insurance_policy_data-covered_lives_asset",
+          "column": "Tenure_Years",
+          "min_value": 0.0
+        },
+        "meta": {
+          "dimension": "Validity"
+        },
+        "severity": "critical",
+        "type": "expect_column_values_to_be_between"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 8359,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "3171399f-22e1-4272-ba80-194626a09ba6",
+        "kwargs": {
+          "batch_id": "insurance_policy_data-covered_lives_asset",
+          "column": "No_of_Outstanding_Premium",
+          "min_value": 0.0
+        },
+        "meta": {
+          "dimension": "Validity"
+        },
+        "severity": "critical",
+        "type": "expect_column_values_to_be_between"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 8359,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0
+      },
+      "success": true
+    }
+  ],
+  "statistics": {
+    "evaluated_expectations": 32,
+    "success_percent": 78.125,
+    "successful_expectations": 25,
+    "unsuccessful_expectations": 7
+  },
+  "success": false,
+  "suite_name": "insurance_covered_lives_dq_suite",
+  "suite_parameters": {}
+}

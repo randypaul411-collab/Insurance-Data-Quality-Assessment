@@ -1,0 +1,22 @@
+{
+  "data": {
+    "asset": {
+      "id": "93406a06-86bf-4487-a908-c6ad2efe1c65",
+      "name": "covered_lives_asset"
+    },
+    "batch_definition": {
+      "id": "c157091e-c4e7-48ea-946e-9900ae404d16",
+      "name": "full_batch"
+    },
+    "datasource": {
+      "id": "98544d13-d345-40bf-b3e1-a345fe2fa2c5",
+      "name": "insurance_policy_data_set"
+    }
+  },
+  "id": "f055a12d-e5ad-4c64-8ee3-7dd2df520e3a",
+  "name": "insurance_validation",
+  "suite": {
+    "id": "dc71cb17-0f7f-493c-8dbb-f6a1426a63a8",
+    "name": "insurance_covered_lives_dq_suite"
+  }
+}
