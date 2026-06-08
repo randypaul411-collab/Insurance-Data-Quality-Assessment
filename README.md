@@ -41,7 +41,9 @@ reports, and producing an executive-level scorecard.
 
 > A low DQ score is not a project failure — it means the validation framework is
 > working correctly and surfacing real issues that exist in the data.
-
+> 
+### Validation Preview
+![Validation Result Screenshot](image/validation result.png)
 ---
 
 ## Key Findings
@@ -83,6 +85,42 @@ reports, and producing an executive-level scorecard.
 
 ---
 
+---
+
+##  Business Recommendations
+
+Based on the findings, the following actions are recommended for the data steward
+and source system owners:
+
+1. **Completeness** — Add `NOT NULL` constraints on critical fields at the source
+   system level; implement mandatory field validation at point of entry
+2. **Policy_Status** — Standardize to a controlled enum `[ACTIVE, LAPSE, NEVER LAPSE,
+   SURRENDERED, MATURED]`; add validation at ETL layer
+3. **Premium_Amount** — Investigate negative and zero premium records; add
+   `CHECK (premium_amount > 0)` constraint at database level
+4. **Covered_Life_ID** — Enforce uniqueness at source; deduplicate existing records
+5. **Date Logic** — Add cross-field validation in ETL pipeline to enforce
+   `Issue_Date ≤ Date_of_Purchase ≤ Maturity_Date`
+6. **Tenure vs Term** — Clarify business definition; Term is confirmed in months,
+   ensure Tenure_Years conversion is applied consistently
+7. **Future Dates** — Investigate source system clock/timezone issues causing
+   future `Date_of_Purchase` entries
+
+---
+
+## Regulatory Context
+
+This project is structured around data quality dimensions relevant to insurance
+and banking regulatory frameworks:
+
+- **IFRS 17** — Requires accurate policy and premium data for insurance contract
+  measurement
+- **BCBS 239** — Demands data accuracy, completeness and timeliness for risk reporting
+- **OSFI (Canada)** — Expects insurers to maintain data governance frameworks with
+  documented DQ controls
+---
+
+---
 ## Project Structure
 
 ```
@@ -128,39 +166,13 @@ jupyter notebook
 #    Or open manually:
 #    great_expectations/uncommitted/data_docs/local_site/index.html
 ```
-
 ---
-
-##  Business Recommendations
-
-Based on the findings, the following actions are recommended for the data steward
-and source system owners:
-
-1. **Completeness** — Add `NOT NULL` constraints on critical fields at the source
-   system level; implement mandatory field validation at point of entry
-2. **Policy_Status** — Standardize to a controlled enum `[ACTIVE, LAPSE, NEVER LAPSE,
-   SURRENDERED, MATURED]`; add validation at ETL layer
-3. **Premium_Amount** — Investigate negative and zero premium records; add
-   `CHECK (premium_amount > 0)` constraint at database level
-4. **Covered_Life_ID** — Enforce uniqueness at source; deduplicate existing records
-5. **Date Logic** — Add cross-field validation in ETL pipeline to enforce
-   `Issue_Date ≤ Date_of_Purchase ≤ Maturity_Date`
-6. **Tenure vs Term** — Clarify business definition; Term is confirmed in months,
-   ensure Tenure_Years conversion is applied consistently
-7. **Future Dates** — Investigate source system clock/timezone issues causing
-   future `Date_of_Purchase` entries
-
 ---
+- **Python Scripts**
+  - [Insurance_policy_DQC.ipynb](https://github.com/randypaul411-collab/Insurance-Data-Quality-Assessment/blob/main/Insurance%20Data%20Quality%20Assessment/Insurance_policy_DQC.ipynb))
+  
 
-## Regulatory Context
-
-This project is structured around data quality dimensions relevant to insurance
-and banking regulatory frameworks:
-
-- **IFRS 17** — Requires accurate policy and premium data for insurance contract
-  measurement
-- **BCBS 239** — Demands data accuracy, completeness and timeliness for risk reporting
-- **OSFI (Canada)** — Expects insurers to maintain data governance frameworks with
-  documented DQ controls
-
----
+-  **Dataset**  
+   - [insurance_policy_data.csv ](https://github.com/randypaul411-collab/Insurance-Data-Quality-Assessment/blob/main/Insurance%20Data%20Quality%20Assessment/insurance_policy_covered_lives_raw_dataset.csv)
+ 
+   ---
