@@ -44,7 +44,7 @@ reports, and producing an executive-level scorecard.
 > 
 ### Validation Preview
 
-![Validation Result](image/validation_result.png) 
+![Validation](image/validation_result.png) 
 
 ---
 ## Key Findings
