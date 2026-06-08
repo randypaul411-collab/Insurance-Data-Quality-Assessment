@@ -43,9 +43,10 @@ reports, and producing an executive-level scorecard.
 > working correctly and surfacing real issues that exist in the data.
 > 
 ### Validation Preview
-![Validation Result Screenshot](image/validation result.png)
----
 
+![Validation Result](image/validation_result.png) 
+
+---
 ## Key Findings
 
 ### Completeness
