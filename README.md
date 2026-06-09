@@ -1,4 +1,4 @@
-#  Insurance Data Quality Analysis
+#  Insurance-Data-Quality-GreatExpectations
 ### A Production-Style Data Quality Project Using Great Expectations
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
