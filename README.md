@@ -10,7 +10,7 @@
 
 ## Project Overview
 
-This project demonstrates a professional **Data Quality Assessment** on a real insurance
+This project demonstrates a professional **Data Quality Assessment** on a Simulated insurance policy and
 covered lives dataset using **Great Expectations (GE) 1.18**. It simulates the kind of
 DQ pipeline a Data Quality Analyst would build in a regulated insurance or banking
 environment — covering all four major data quality dimensions, generating automated
