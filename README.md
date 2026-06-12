@@ -44,7 +44,8 @@ reports, and producing an executive-level scorecard.
 > 
 ### Validation Preview
 
-![Validation](Insurance Data Quality Assessment/image/validation_result.jpeg) 
+![Validation](Insurance%20Data%20Quality%20Assessment/image/validation_result.jpeg)
+
 
 ---
 ## Key Findings
