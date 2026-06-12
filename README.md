@@ -42,17 +42,20 @@ reports, and producing an executive-level scorecard.
 > A low DQ score is not a project failure — it means the validation framework is
 > working correctly and surfacing real issues that exist in the data.
 > 
+
+---
+## Key Findings
 ### Validation Preview
 
 ![Validation](Insurance%20Data%20Quality%20Assessment/image/validation_result.jpeg)
 
-
----
-## Key Findings
-
 ### Completeness
 - **6,234 records (74.58%)** missing values in a critical column — highest priority fix
 - **12 records (0.14%)** missing values in a secondary column
+
+### Validation Filter
+
+![Validation](Insurance%20Data%20Quality%20Assessment/image/validation_filter.jpeg)
 
 ### Validity
 - **`Policy_Status`** — 32 records (0.38%) contain invalid values:
